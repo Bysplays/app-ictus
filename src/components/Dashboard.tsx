@@ -99,7 +99,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <div className="welcome-content">
             <div className="welcome-greeting">
               <span className="welcome-tag">Hola, {profile.name} 👋</span>
-              <h2 className="welcome-title">Bienvenido a tu sesión de NeuroActiva</h2>
+              <h2 className="welcome-title">Bienvenido a tu sesión de NeuroIA</h2>
             </div>
 
           {profile.therapistGuidanceNote && (
@@ -320,7 +320,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div>
                   <h4>2. Gamificación Libre de Estrés (Sin Castigos)</h4>
                   <p>
-                    En NeuroActiva <strong>nunca se restan puntos por equivocarse</strong> ni hay "Game Over". Cada intento suma valor porque cada repetición estimula el cerebro. Los puntos premian tu constancia y perseverancia.
+                    En NeuroIA <strong>nunca se restan puntos por equivocarse</strong> ni hay "Game Over". Cada intento suma valor porque cada repetición estimula el cerebro. Los puntos premian tu constancia y perseverancia.
                   </p>
                 </div>
               </div>
