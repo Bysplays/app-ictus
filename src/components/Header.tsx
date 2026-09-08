@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
           <Brain size={34} strokeWidth={2.2} />
         </div>
         <div>
-          <h1 className="header-title">NeuroActiva</h1>
+          <h1 className="header-title">NeuroIA</h1>
           <p className="header-subtitle">Rehabilitación y Neuroentrenamiento</p>
         </div>
       </div>

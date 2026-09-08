@@ -1,7 +1,7 @@
 import type { UserProfile, ExerciseResult, AccessibilitySettings, CognitiveDomain, TherapistNote } from '../types';
 
-const STORAGE_KEY = 'neuroactiva_profile_v5';
-const HISTORY_KEY = 'neuroactiva_history_v5';
+const STORAGE_KEY = 'neuroia_profile_v1';
+const HISTORY_KEY = 'neuroia_history_v1';
 
 export const defaultSettings: AccessibilitySettings = {
   fontSize: 'large',
@@ -54,7 +54,7 @@ export class StorageService {
         localStorage.removeItem(`neuroactiva_history_${v}`);
       });
 
-      const data = localStorage.getItem(STORAGE_KEY);
+      const data = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('neuroactiva_profile_v5');
       if (!data) {
         const initial = getInitialProfile();
         this.saveProfile(initial);
@@ -250,7 +250,7 @@ export class StorageService {
   public static getHistory(): ExerciseResult[] {
     if (typeof window === 'undefined') return [];
     try {
-      const data = localStorage.getItem(HISTORY_KEY);
+      const data = localStorage.getItem(HISTORY_KEY) || localStorage.getItem('neuroactiva_history_v5');
       if (data) {
         const history: ExerciseResult[] = JSON.parse(data);
         return history.map(h => ({
