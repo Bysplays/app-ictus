@@ -1426,7 +1426,9 @@ body[data-contrast="high"] .touch-btn-correction {
   padding: 4px 20px 16px 20px;
   height: 100%;
   flex: 1;
-  border-radius: var(--radius-xl);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .naming-target-block {
@@ -3062,11 +3064,12 @@ body.focus-mode-active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(14px, 2.2vh, 24px);
-  padding: clamp(20px, 3vh, 32px);
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  justify-content: flex-start;
+  gap: clamp(10px, 1.8vh, 20px);
+  padding: 4px 16px 16px 16px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .completion-target-block {
@@ -3256,6 +3259,26 @@ body.focus-mode-active {
   cursor: default;
 }
 
+.completion-next-bar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 10px auto 0 auto;
+  min-height: 56px;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.completion-next-bar-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.completion-next-bar-hidden button {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
 /* ==========================================================================
    MOTOR TRACKING GAME
    ========================================================================== */
@@ -3385,10 +3408,11 @@ body.focus-mode-active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
-  padding: clamp(24px, 4vh, 40px);
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
+  gap: 24px;
+  padding: clamp(12px, 2vh, 24px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .gonogo-target-display {
@@ -3498,10 +3522,11 @@ body.focus-mode-active {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: clamp(16px, 2.5vh, 28px);
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
+  gap: 16px;
+  padding: clamp(10px, 1.8vh, 20px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .pairs-preview-banner {
@@ -3672,10 +3697,12 @@ body.focus-mode-active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(16px, 2.5vh, 28px);
-  padding: clamp(20px, 3vh, 32px);
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
+  justify-content: flex-start;
+  gap: clamp(12px, 2vh, 22px);
+  padding: 4px 16px 16px 16px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .category-object-card {
@@ -3770,6 +3797,26 @@ body.focus-mode-active {
   color: #16a34a;
   font-weight: 700;
   font-size: 1rem;
+}
+
+.category-next-bar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 12px;
+  min-height: 56px;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.category-next-bar-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.category-next-bar-hidden button {
+  pointer-events: none !important;
+  cursor: default !important;
 }
 
 

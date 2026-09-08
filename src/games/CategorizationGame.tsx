@@ -465,7 +465,7 @@ export const CategorizationGame: React.FC<CategorizationGameProps> = ({
       onNextPlanExercise={onNextPlanExercise}
     >
       <div className="categorization-game-container">
-        <div className="card categorization-card">
+        <div className="categorization-card">
           {/* Objeto central a clasificar */}
           <div className="category-object-card">
             <span className="large-object-emoji">{currentItem.emoji}</span>
@@ -526,18 +526,21 @@ export const CategorizationGame: React.FC<CategorizationGameProps> = ({
             })}
           </div>
 
-          {/* Botón de Siguiente */}
-          {selectedCategory !== null && (
-            <div className="category-next-bar actions-bar animate-fade-in">
-              <button
-                className="touch-btn touch-btn-primary touch-btn-large gentle-bounce"
-                onClick={handleNext}
-              >
-                <span>{currentIdx + 1 < sessionItems.length ? 'Siguiente Objeto' : 'Ver Resultados'}</span>
-                <ArrowRight size={24} />
-              </button>
-            </div>
-          )}
+          {/* Botón de Siguiente persistente en layout */}
+          <div
+            className={`category-next-bar actions-bar ${selectedCategory === null ? 'category-next-bar-hidden' : ''}`}
+            aria-hidden={selectedCategory === null}
+          >
+            <button
+              className={`touch-btn touch-btn-primary touch-btn-large ${selectedCategory !== null ? 'gentle-bounce' : ''}`}
+              onClick={handleNext}
+              disabled={selectedCategory === null}
+              tabIndex={selectedCategory === null ? -1 : 0}
+            >
+              <span>{currentIdx + 1 < sessionItems.length ? 'Siguiente Objeto' : 'Ver Resultados'}</span>
+              <ArrowRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </ExerciseWrapper>
