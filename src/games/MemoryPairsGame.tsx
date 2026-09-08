@@ -275,7 +275,7 @@ export const MemoryPairsGame: React.FC<MemoryPairsGameProps> = ({
       onNextPlanExercise={onNextPlanExercise}
     >
       <div className="memory-pairs-game-container">
-        <div className="card pairs-board-card">
+        <div className="pairs-board-card">
           {isPreviewPhase ? (
             <div className="pairs-preview-banner animate-fade-in">
               <div className="preview-banner-text">

@@ -412,7 +412,7 @@ export const WordCompletionGame: React.FC<WordCompletionGameProps> = ({
         onPointerUp={handlePointerUpContainer}
         onPointerCancel={handlePointerUpContainer}
       >
-        <div className="card word-completion-card">
+        <div className="word-completion-card">
           {/* 1. Imagen / Emoji central */}
           <div className="completion-emoji-display">
             <span className="large-object-emoji">{currentItem.emoji}</span>
@@ -532,18 +532,21 @@ export const WordCompletionGame: React.FC<WordCompletionGameProps> = ({
             })}
           </div>
 
-          {/* 5. Barra de siguiente */}
-          {selectedLetter !== null && (
-            <div className="completion-next-bar actions-bar animate-fade-in">
-              <button
-                className="touch-btn touch-btn-primary touch-btn-large gentle-bounce"
-                onClick={handleNext}
-              >
-                <span>{currentIdx + 1 < sessionItems.length ? 'Siguiente Palabra' : 'Ver Resultados'}</span>
-                <ArrowRight size={24} />
-              </button>
-            </div>
-          )}
+          {/* 5. Barra de siguiente persistente */}
+          <div
+            className={`completion-next-bar actions-bar ${selectedLetter === null ? 'completion-next-bar-hidden' : ''}`}
+            aria-hidden={selectedLetter === null}
+          >
+            <button
+              className={`touch-btn touch-btn-primary touch-btn-large ${selectedLetter !== null ? 'gentle-bounce' : ''}`}
+              onClick={handleNext}
+              disabled={selectedLetter === null}
+              tabIndex={selectedLetter === null ? -1 : 0}
+            >
+              <span>{currentIdx + 1 < sessionItems.length ? 'Siguiente Palabra' : 'Ver Resultados'}</span>
+              <ArrowRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </ExerciseWrapper>

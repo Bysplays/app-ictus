@@ -210,7 +210,7 @@ export const AttentionGoNoGoGame: React.FC<AttentionGoNoGoGameProps> = ({
       onNextPlanExercise={onNextPlanExercise}
     >
       <div className="gonogo-game-container">
-        <div className="card gonogo-card">
+        <div className="gonogo-card">
           {/* Estímulo Central */}
           <div
             className={`gonogo-target-display ${currentTrial?.bgClass || ''} ${userResponded ? 'target-reacted' : ''}`}

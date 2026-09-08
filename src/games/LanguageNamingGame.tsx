@@ -469,7 +469,7 @@ export const LanguageNamingGame: React.FC<LanguageNamingGameProps> = ({
       onNextPlanExercise={onNextPlanExercise}
     >
       <div className="language-game-container">
-        <div className="card naming-card">
+        <div className="naming-card">
           {/* Bloque superior: Foto + Botones de audio inmediatamente debajo */}
           <div className="naming-target-block">
             <div className="naming-emoji-display">
