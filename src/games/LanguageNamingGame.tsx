@@ -536,17 +536,20 @@ export const LanguageNamingGame: React.FC<LanguageNamingGameProps> = ({
             })}
           </div>
 
-          {selectedOption !== null && (
-            <div className="naming-next-bar actions-bar">
-              <button
-                className="touch-btn touch-btn-primary touch-btn-large gentle-bounce"
-                onClick={handleNext}
-              >
-                <span>{currentIdx + 1 < sessionQuestions.length ? 'Siguiente Palabra' : 'Ver Resultados'}</span>
-                <ArrowRight size={24} />
-              </button>
-            </div>
-          )}
+          <div
+            className={`naming-next-bar actions-bar ${selectedOption === null ? 'naming-next-bar-hidden' : ''}`}
+            aria-hidden={selectedOption === null}
+          >
+            <button
+              className={`touch-btn touch-btn-primary touch-btn-large ${selectedOption !== null ? 'gentle-bounce' : ''}`}
+              onClick={handleNext}
+              disabled={selectedOption === null}
+              tabIndex={selectedOption === null ? -1 : 0}
+            >
+              <span>{currentIdx + 1 < sessionQuestions.length ? 'Siguiente Palabra' : 'Ver Resultados'}</span>
+              <ArrowRight size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </ExerciseWrapper>

@@ -1421,9 +1421,9 @@ body[data-contrast="high"] .touch-btn-correction {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: clamp(12px, 2.2vh, 22px);
-  padding: 12px 24px;
+  justify-content: flex-start;
+  gap: clamp(8px, 1.6vh, 16px);
+  padding: 4px 20px 16px 20px;
   height: 100%;
   flex: 1;
   border-radius: var(--radius-xl);
@@ -1434,12 +1434,12 @@ body[data-contrast="high"] .touch-btn-correction {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .naming-emoji-display {
-  width: clamp(230px, 32vh, 320px);
-  height: clamp(230px, 32vh, 320px);
+  width: clamp(180px, 24vh, 260px);
+  height: clamp(180px, 24vh, 260px);
   border-radius: var(--radius-2xl);
   background-color: var(--color-surface-hover);
   border: 3px solid var(--color-border);
@@ -1450,7 +1450,7 @@ body[data-contrast="high"] .touch-btn-correction {
 }
 
 .large-object-emoji {
-  font-size: clamp(8rem, 18vh, 12rem);
+  font-size: clamp(6.5rem, 14vh, 9.5rem);
   line-height: 1;
   display: flex;
   align-items: center;
@@ -1461,7 +1461,7 @@ body[data-contrast="high"] .touch-btn-correction {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   margin-top: 2px;
 }
 
@@ -1482,15 +1482,15 @@ body[data-contrast="high"] .touch-btn-correction {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 28px);
+  gap: clamp(12px, 2vw, 24px);
   width: 100%;
   max-width: 1050px;
   margin: 0 auto;
 }
 
 .naming-option-btn {
-  flex: 1 1 270px;
-  max-width: 320px;
+  flex: 1 1 250px;
+  max-width: 310px;
   background-color: var(--color-surface);
   border: 3px solid var(--color-border);
   color: var(--color-text-main);
@@ -1499,11 +1499,11 @@ body[data-contrast="high"] .touch-btn-correction {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: clamp(90px, 12vh, 115px);
-  font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+  min-height: clamp(76px, 9.5vh, 98px);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
   font-weight: 800;
   border-radius: var(--radius-xl);
-  padding: 16px 24px;
+  padding: 12px 20px;
   text-align: center;
   transition: all var(--transition-fast);
 }
@@ -1532,6 +1532,19 @@ body[data-contrast="high"] .touch-btn-correction {
   max-width: 900px;
   justify-content: center;
   margin: 8px auto 0 auto;
+  min-height: 56px;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.naming-next-bar-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.naming-next-bar-hidden button {
+  pointer-events: none !important;
+  cursor: default !important;
 }
 
 /* Juego 3: Memoria */
